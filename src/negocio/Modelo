@@ -1,0 +1,14 @@
+b=0
+e=0
+
+casos:
+
+siempre b,e int por ende no hay resultado mayor a 2147483647
+si b es 0 e no puede ser 0
+si e es 0 b siempre es 1
+
+
+que casos pueden generar errores?
+
+
+
