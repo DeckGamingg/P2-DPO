@@ -1,11 +1,11 @@
 package presentacion;
-import negocio.Calculadora;
+import negocio.Parcial;
 
 public class Presentacion {
 
     public static void main(String[] args) {
 
-        Calculadora calc = new Calculadora();
+        Parcial calc = new Parcial();
 
         try {
             int res = calc.potencia(2, 10);

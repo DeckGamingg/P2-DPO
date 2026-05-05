@@ -1,11 +1,11 @@
 package tests;
-import negocio.Calculadora;
+import negocio.Parcial;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Tests {
 
-    Calculadora calc = new Calculadora();
+    Parcial calc = new Parcial();
 
     @Test
     public void testNormal() throws Exception {
