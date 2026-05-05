@@ -1,34 +1,15 @@
 package negocio;
 
-public abstract class Calculadora {
-	protected int base;
-	protected int exponente;
-	
-	public Calculadora(int d, int e) {
-		this.base = d;
-		this.exponente = e;	
-	}
-	
-	public int getBase() {
-		return base;
-	}
+public class Calculadora {
 
-	public void setBase(int d) {
-		this.base = d;
-	}
+    public int potencia(int b, int e) throws Exception {
 
-	public int getExponente() {
-		return exponente;
-	}
+        if(e < 0) throw new Exception("Exponente no puede ser negativo");
 
-	public void setExponente(int e) {
-		this.exponente = e;
-	}
-	
-	public abstract int base();
-	public abstract int exponente();
-	
+        long res = (long) Math.pow(b, e);
 
-	
+        if(res > 2147483647) throw new Exception("Resultado supera el limite entero");
+
+        return (int) res;
+    }
 }
-

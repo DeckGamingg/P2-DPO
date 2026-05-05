@@ -1,36 +1,31 @@
 package tests;
+import negocio.Calculadora;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+public class Tests {
 
-import negocio.Parcial;
+    Calculadora calc = new Calculadora();
 
-import org.junit.jupiter.api.Test;
+    @Test
+    public void testNormal() throws Exception {
+        int res = calc.potencia(2, 10);
+        assertEquals(1024, res);
+    }
 
+    @Test
+    public void testLimite() throws Exception {
+        int res = calc.potencia(2, 30);
+        assertEquals(1073741824, res);
+    }
 
-class Tests {
-	
-	private final Parcial calculadora = new Parcial();
-	
-	@Test
-	
-	}
-	
-}
+    @Test
+    public void testExponenteNegativo() {
+        assertThrows(Exception.class, () -> calc.potencia(2, -1));
+    }
 
-
-
-import example.util.Calculator;
-
-import org.junit.jupiter.api.Test;
-
-class MyFirstJUnitJupiterTests {
-
-	private final Calculator calculator = new Calculator();
-
-	@Test
-	void addition() {
-		assertEquals(2, calculator.add(1, 1));
-	}
-
+    @Test
+    public void testSuperaLimite() {
+        assertThrows(Exception.class, () -> calc.potencia(2, 31));
+    }
 }
